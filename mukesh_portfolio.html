@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mukesh Dosad — Writer & Scriptwriter</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f0e0c;
+  --paper: #f5f0e8;
+  --accent: #c8392b;
+  --accent2: #1a3a5c;
+  --muted: #8a7f72;
+  --rule: #d4c9b8;
+  --dark: #1a1a18;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background: rgba(245,240,232,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-brand {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+
+/* HERO */
+header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 3rem 4rem;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: up 0.9s 0.1s ease forwards;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(4.5rem, 13vw, 11rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.025em;
+  opacity: 0;
+  animation: up 0.9s 0.2s ease forwards;
+}
+h1 .solid { display: block; color: var(--ink); }
+h1 .outline {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 2.5px var(--ink);
+  font-style: italic;
+}
+.tagline {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--muted);
+  margin-top: 2.5rem;
+  max-width: 520px;
+  opacity: 0;
+  animation: up 0.9s 0.3s ease forwards;
+}
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+  width: 100%;
+  max-width: 700px;
+  opacity: 0;
+  animation: up 0.9s 0.4s ease forwards;
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+}
+.stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+/* SECTIONS */
+.section { padding: 6rem 3rem; border-bottom: 1px solid var(--rule); }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+h2 em { font-style: italic; }
+.section-sub {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 3rem;
+}
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; margin-top: 2rem; }
+.about-body p { color: #3a3530; margin-bottom: 1.3rem; font-size: 1.08rem; }
+.about-body p strong { color: var(--ink); }
+.about-sidebar { border-left: 3px solid var(--accent); padding-left: 2rem; }
+.sidebar-row { margin-bottom: 1.8rem; }
+.sidebar-lbl { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 0.3rem; }
+.sidebar-val { font-size: 0.98rem; }
+.sidebar-val a { color: var(--accent2); text-decoration: none; }
+.sidebar-val a:hover { text-decoration: underline; }
+
+/* REELS */
+.reels-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 3px; margin-top: 2rem; }
+.reel-card {
+  background: var(--dark);
+  color: var(--paper);
+  padding: 2.2rem;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+.reel-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.reel-card:hover { transform: scale(0.985); }
+.reel-card:hover::before { transform: scaleX(1); }
+.reel-n { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--muted); margin-bottom: 1.2rem; display: block; }
+.reel-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.8rem; color: var(--paper); }
+.reel-desc { font-size: 0.92rem; color: #a09080; line-height: 1.5; margin-bottom: 1.2rem; font-style: italic; }
+.reel-tag { font-family: 'DM Mono', monospace; font-size: 0.53rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 0.18rem 0.55rem; display: inline-block; }
+.reel-views { font-family: 'DM Mono', monospace; font-size: 0.58rem; color: var(--muted); margin-top: 0.9rem; display: block; }
+
+/* WRITTEN */
+.written-list { margin-top: 1.5rem; }
+.written-item {
+  display: grid;
+  grid-template-columns: 70px 1fr 30px;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+  transition: padding-left 0.2s ease;
+}
+.written-item:first-child { border-top: 1px solid var(--rule); }
+.written-item:hover { padding-left: 0.8rem; }
+.w-num { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: var(--rule); line-height: 1; }
+.w-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+.w-sub { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 0.9rem; color: var(--muted); }
+.w-arrow { color: var(--muted); font-size: 1.1rem; transition: color 0.2s, transform 0.2s; }
+.written-item:hover .w-arrow { color: var(--accent); transform: translateX(4px); }
+
+/* ARTICLES */
+.articles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+.article-card {
+  border: 1px solid var(--rule);
+  padding: 1.8rem;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.2s, transform 0.2s;
+  display: block;
+}
+.article-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+.article-views { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; margin-bottom: 0.8rem; display: block; }
+.article-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; line-height: 1.35; margin-bottom: 0.5rem; }
+.article-platform { font-family: 'DM Mono', monospace; font-size: 0.58rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* RESEARCH */
+.research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+.research-card {
+  border: 1px solid var(--rule);
+  padding: 1.8rem;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: border-color 0.2s;
+  position: relative;
+}
+.research-card:hover { border-color: var(--accent2); }
+.ssrn-badge { font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.2em; color: var(--accent2); border: 1px solid var(--accent2); padding: 0.15rem 0.5rem; display: inline-block; margin-bottom: 0.9rem; text-transform: uppercase; }
+.research-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.5rem; }
+.research-desc { font-size: 0.9rem; color: var(--muted); font-style: italic; }
+
+/* NICHES */
+.niche-cloud { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
+.niche-pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  transition: all 0.2s;
+  cursor: default;
+}
+.niche-pill:hover { background: var(--ink); color: var(--paper); }
+
+/* CONTACT */
+.contact-block {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 6rem 3rem;
+  text-align: center;
+}
+.contact-block h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 900; font-style: italic; color: var(--paper); margin-bottom: 1rem; }
+.contact-sub { font-style: italic; color: #a09080; font-size: 1.05rem; margin-bottom: 2.5rem; }
+.contact-links { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+.contact-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--paper);
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.25rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+.contact-link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ANIMATIONS */
+@keyframes up { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  header { padding: 7rem 1.5rem 3rem; }
+  .section { padding: 4rem 1.5rem; }
+  .about-grid, .research-grid, .articles-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .stats-bar { gap: 2rem; }
+  h1 { letter-spacing: -0.02em; }
+  .written-item { grid-template-columns: 50px 1fr 24px; }
+  .w-num { font-size: 2rem; }
+  .contact-links { gap: 1.5rem; }
+  .contact-block { padding: 4rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Mukesh Dosad</a>
+  <ul class="nav-links">
+    <li><a href="#scripts">Scripts</a></li>
+    <li><a href="#articles">Articles</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header>
+  <span class="eyebrow">Freelance Writer &amp; Scriptwriter — India</span>
+  <h1>
+    <span class="solid">Mukesh</span>
+    <span class="outline">Dosad</span>
+  </h1>
+  <p class="tagline">Writer of the Uncomfortable &amp; the Necessary — Law, Politics, Culture, Ideas</p>
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-num">1M+</span>
+      <span class="stat-label">Views on Legal Service India</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">6</span>
+      <span class="stat-label">SSRN Publications</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">4yr</span>
+      <span class="stat-label">Freelance Experience</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">15+</span>
+      <span class="stat-label">Paid Deliverables</span>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="section reveal" id="about">
+  <div class="section-inner">
+    <div class="section-label">About</div>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>I'm a 4th-year <strong>BBA LLB (Hons)</strong> student at ICFAI University Dehradun, also holding a degree in Psychology from Delhi University. For the past four years I've been writing — not as a hobby, but as a practice.</p>
+        <p>I write across <strong>political commentary, legal analysis, health, technology, and culture</strong> — for YouTube creators, digital platforms, and private clients. My legal training and psychology background aren't separate from my writing. They're the reason it works.</p>
+        <p>I specialize in taking something complex — a constitutional question, a political controversy, a social trend — and making it land with precision and clarity. <strong>Depth without jargon. Argument without noise.</strong></p>
+      </div>
+      <div class="about-sidebar">
+        <div class="sidebar-row">
+          <div class="sidebar-lbl">Based in</div>
+          <div class="sidebar-val">Dehradun, Uttarakhand, India</div>
+        </div>
+        <div class="sidebar-row">
+          <div class="sidebar-lbl">Available for</div>
+          <div class="sidebar-val">Scriptwriting, Articles, Legal Content, Ghostwriting, Retainer Work</div>
+        </div>
+        <div class="sidebar-row">
+          <div class="sidebar-lbl">Languages</div>
+          <div class="sidebar-val">Hindi, English, Hinglish</div>
+        </div>
+        <div class="sidebar-row">
+          <div class="sidebar-lbl">Instagram</div>
+          <div class="sidebar-val"><a href="https://www.instagram.com/thusspokemukesh" target="_blank">@thusspokemukesh</a></div>
+        </div>
+        <div class="sidebar-row">
+          <div class="sidebar-lbl">LinkedIn</div>
+          <div class="sidebar-val"><a href="https://www.linkedin.com/in/maviesque/" target="_blank">linkedin.com/in/maviesque</a></div>
+        </div>
+        <div class="sidebar-row">
+          <div class="sidebar-lbl">Contact</div>
+          <div class="sidebar-val"><a href="mailto:mukesharchives@gmail.com">mukesharchives@gmail.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLISHED SCRIPTS -->
+<section class="section reveal" id="scripts">
+  <div class="section-inner">
+    <div class="section-label">Published Scripts — Live Work</div>
+    <h2>Scripts that made it <em>to screen</em></h2>
+    <p class="section-sub">Written and delivered — produced as short-form video content. 3,000–4,000 views per piece.</p>
+    <div class="reels-grid">
+
+      <a href="https://www.instagram.com/reel/DYzbvLEoDXl/" target="_blank" class="reel-card">
+        <span class="reel-n">01 — PUBLISHED</span>
+        <div class="reel-title">UPSC Exam Controversy</div>
+        <div class="reel-desc">The new testing reality — what India's most contested exam controversy means for lakhs of aspirants.</div>
+        <span class="reel-tag">Current Affairs</span>
+        <span class="reel-views">↗ Live on Instagram · 3–4K Views</span>
+      </a>
+
+      <a href="https://www.instagram.com/reel/DYpD2MLh4ms/" target="_blank" class="reel-card">
+        <span class="reel-n">02 — PUBLISHED</span>
+        <div class="reel-title">Cockroach Janta Party vs BJP</div>
+        <div class="reel-desc">The CJI's remark calling unemployed youth "parasitic cockroaches" and the political firestorm that followed.</div>
+        <span class="reel-tag">Political Commentary</span>
+        <span class="reel-views">↗ Live on Instagram · 3–4K Views</span>
+      </a>
+
+      <a href="https://www.instagram.com/reel/DY9XFjsIhqc/" target="_blank" class="reel-card">
+        <span class="reel-n">03 — PUBLISHED</span>
+        <div class="reel-title">Vote Chori — The EVM Controversy</div>
+        <div class="reel-desc">Rahul Gandhi's electoral fraud allegations, the ECI's credibility crisis, and BJP's counter-narrative.</div>
+        <span class="reel-tag">Election Analysis</span>
+        <span class="reel-views">↗ Live on Instagram · 3–4K Views</span>
+      </a>
+
+      <a href="https://www.instagram.com/reel/DZANbaIMBNV/" target="_blank" class="reel-card">
+        <span class="reel-n">04 — PUBLISHED</span>
+        <div class="reel-title">The "Life Set" Trap — Youth Frustration</div>
+        <div class="reel-desc">On the social myth that education guarantees employment — and the generational rage when it doesn't.</div>
+        <span class="reel-tag">Social Commentary</span>
+        <span class="reel-views">↗ Live on Instagram · 3–4K Views</span>
+      </a>
+
+      <a href="https://www.instagram.com/reel/DZCeiieoW21/" target="_blank" class="reel-card">
+        <span class="reel-n">05 — PUBLISHED</span>
+        <div class="reel-title">West Bengal 2026 — Mamata's Fall</div>
+        <div class="reel-desc">The Bengal election result, what TMC's loss means, and BJP's consolidation of the East.</div>
+        <span class="reel-tag">Election Analysis</span>
+        <span class="reel-views">↗ Live on Instagram · 3–4K Views</span>
+      </a>
+
+      <a href="https://www.instagram.com/reel/DZAT3jLB1KM/" target="_blank" class="reel-card">
+        <span class="reel-n">06 — PUBLISHED</span>
+        <div class="reel-title">The Surname That Defined Bihar</div>
+        <div class="reel-desc">Cultural and historical deep-dive into a surname tracing its roots across the Bihar-Orissa belt.</div>
+        <span class="reel-tag">History &amp; Culture</span>
+        <span class="reel-views">↗ Live on Instagram · 3–4K Views</span>
+      </a>
+
+      <a href="https://www.instagram.com/reel/DY4XfEFBF1t/" target="_blank" class="reel-card">
+        <span class="reel-n">07 — PUBLISHED</span>
+        <div class="reel-title">Nitin Nabin — The New Face of BJP</div>
+        <div class="reel-desc">Who is BJP's new national president, and what does his appointment signal for the party's future direction?</div>
+        <span class="reel-tag">Party Politics</span>
+        <span class="reel-views">↗ Live on Instagram · 3–4K Views</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- OTHER WRITTEN WORK -->
+<section class="section reveal" id="other-work">
+  <div class="section-inner">
+    <div class="section-label">Other Written Work</div>
+    <h2>Scripts &amp; articles <em>delivered</em></h2>
+    <p class="section-sub">Paid freelance work across niches — scripts, articles, ghostwriting.</p>
+    <div class="written-list">
+
+      <div class="written-item" style="border-top:1px solid var(--rule);">
+        <div class="w-num">01</div>
+        <div>
+          <div class="w-title">The Truth Behind Startups — Myth and Reality</div>
+          <div class="w-sub">YouTube script · ~10 min runtime · Startup culture analysis · Paid, delivered</div>
+        </div>
+        <span class="w-arrow">→</span>
+      </div>
+
+      <div class="written-item">
+        <div class="w-num">02</div>
+        <div>
+          <div class="w-title">How to Optimize for Local SEO with AI-Powered Tools</div>
+          <div class="w-sub">1,000-word article · SEO &amp; digital marketing · Paid, delivered</div>
+        </div>
+        <span class="w-arrow">→</span>
+      </div>
+
+      <div class="written-item">
+        <div class="w-num">03</div>
+        <div>
+          <div class="w-title">Why Are My Gums Bleeding?</div>
+          <div class="w-sub">Health &amp; wellness article · Dental explainer for general audience · Paid, delivered</div>
+        </div>
+        <span class="w-arrow">→</span>
+      </div>
+
+      <div class="written-item">
+        <div class="w-num">04</div>
+        <div>
+          <div class="w-title">Data Science &amp; Computer Innovation</div>
+          <div class="w-sub">Technology article · Trends in data science and computing · Paid, delivered</div>
+        </div>
+        <span class="w-arrow">→</span>
+      </div>
+
+      <div class="written-item">
+        <div class="w-num">05</div>
+        <div>
+          <div class="w-title">Blanket Analysis Report</div>
+          <div class="w-sub">Ghostwriting · PDF/print format · Private client · Paid, delivered</div>
+        </div>
+        <span class="w-arrow">→</span>
+      </div>
+
+      <div class="written-item">
+        <div class="w-num">06</div>
+        <div>
+          <div class="w-title">Political Commentary Scripts — Monthly Retainer</div>
+          <div class="w-sub">Ongoing · 3 short scripts/week + long-form · Current affairs &amp; Indian politics</div>
+        </div>
+        <span class="w-arrow">→</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL SERVICE INDIA ARTICLES -->
+<section class="section reveal" id="articles">
+  <div class="section-inner">
+    <div class="section-label">Published Articles — Legal Service India</div>
+    <h2>Writing that <em>reached people</em></h2>
+    <p class="section-sub">Legal analysis and social commentary — over 1 million cumulative views.</p>
+    <div class="articles-grid">
+
+      <a href="https://www.legalserviceindia.com/Legal-Articles/why-men-rape-and-why-men-rape-is-not-a-crime/" target="_blank" class="article-card">
+        <span class="article-views">327,000 Views</span>
+        <div class="article-title">Why Men Rape — And Why Rape Is Not a Crime of Passion</div>
+        <span class="article-platform">Legal Service India</span>
+      </a>
+
+      <a href="https://www.legalserviceindia.com/Legal-Articles/general-will-of-people-and-will-of-people-the-difference/" target="_blank" class="article-card">
+        <span class="article-views">28,000 Views</span>
+        <div class="article-title">General Will of the People vs Will of the People — The Difference</div>
+        <span class="article-platform">Legal Service India</span>
+      </a>
+
+      <a href="https://www.legalserviceindia.com/Legal-Articles/basic-doctrine-and-its-limitation/" target="_blank" class="article-card">
+        <span class="article-views">28,000 Views</span>
+        <div class="article-title">Basic Structure Doctrine and Its Limitations</div>
+        <span class="article-platform">Legal Service India</span>
+      </a>
+
+      <a href="https://www.legalserviceindia.com/Legal-Articles/rule-of-law-and-contrast-to-india-law/" target="_blank" class="article-card">
+        <span class="article-views">27,000 Views</span>
+        <div class="article-title">Rule of Law and Its Contrast in the Indian Context</div>
+        <span class="article-platform">Legal Service India</span>
+      </a>
+
+      <a href="https://www.legalserviceindia.com/Legal-Articles/crime-criminal-criminality-and-society-indian-law-perspective/" target="_blank" class="article-card">
+        <span class="article-views">24,000 Views</span>
+        <div class="article-title">Crime, Criminal, Criminality and Society — An Indian Law Perspective</div>
+        <span class="article-platform">Legal Service India</span>
+      </a>
+
+      <a href="https://www.legalserviceindia.com/Legal-Articles/author/mukeshdosad/" target="_blank" class="article-card" style="border-color: var(--accent2);">
+        <span class="article-views" style="color:var(--accent2);">Full Profile →</span>
+        <div class="article-title">View All Published Articles</div>
+        <span class="article-platform">Legal Service India — Author Page</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- SSRN RESEARCH -->
+<section class="section reveal" id="research">
+  <div class="section-inner">
+    <div class="section-label">Academic Research — SSRN Published</div>
+    <h2>Six papers. <em>Published.</em></h2>
+    <p class="section-sub">Peer-indexed research across law, philosophy, and jurisprudence. <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7215102" target="_blank" style="color:var(--accent2);">View SSRN Profile →</a></p>
+    <div class="research-grid">
+
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5033910" target="_blank" class="research-card">
+        <span class="ssrn-badge">SSRN Published</span>
+        <div class="research-title">Understanding Ambiguity in Statutory Language</div>
+        <div class="research-desc">Interpretive challenges and judicial approaches in legislative drafting</div>
+      </a>
+
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5199284" target="_blank" class="research-card">
+        <span class="ssrn-badge">SSRN Published</span>
+        <div class="research-title">Art, Access, and Ethics: The IPR vs. Piracy Debate</div>
+        <div class="research-desc">Intellectual property law and its ethical dimensions</div>
+      </a>
+
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5214570" target="_blank" class="research-card">
+        <span class="ssrn-badge">SSRN Published</span>
+        <div class="research-title">Role of Morality in Jurisprudence</div>
+        <div class="research-desc">The intersection of legal philosophy and moral theory</div>
+      </a>
+
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5215620" target="_blank" class="research-card">
+        <span class="ssrn-badge">SSRN Published</span>
+        <div class="research-title">Post Modernism and Effects on New Generation</div>
+        <div class="research-desc">Postmodern thought and its cultural and generational impact</div>
+      </a>
+
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5735264" target="_blank" class="research-card">
+        <span class="ssrn-badge">SSRN Published</span>
+        <div class="research-title">Possession, Ownership, and Justice</div>
+        <div class="research-desc">A philosophical inquiry into civil adjudication of property rights</div>
+      </a>
+
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6362170" target="_blank" class="research-card">
+        <span class="ssrn-badge">SSRN Published</span>
+        <div class="research-title">Crime, Culpability, and the Constitution</div>
+        <div class="research-desc">A socio-legal study of criminal responsibility in India</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- NICHES -->
+<section class="section reveal">
+  <div class="section-inner">
+    <div class="section-label">Areas of Work</div>
+    <div class="niche-cloud">
+      <span class="niche-pill">Indian Politics</span>
+      <span class="niche-pill">Legal Analysis</span>
+      <span class="niche-pill">Political Commentary</span>
+      <span class="niche-pill">Current Affairs</span>
+      <span class="niche-pill">Election Analysis</span>
+      <span class="niche-pill">Social Issues</span>
+      <span class="niche-pill">SEO Writing</span>
+      <span class="niche-pill">Health &amp; Wellness</span>
+      <span class="niche-pill">Technology</span>
+      <span class="niche-pill">Startup Culture</span>
+      <span class="niche-pill">Ghostwriting</span>
+      <span class="niche-pill">Scriptwriting</span>
+      <span class="niche-pill">Academic Research</span>
+      <span class="niche-pill">Constitutional Law</span>
+      <span class="niche-pill">Jurisprudence</span>
+      <span class="niche-pill">Philosophy</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-block" id="contact">
+  <h2>Let's work<br>together.</h2>
+  <p class="contact-sub">Available for scriptwriting, articles, legal content, ghostwriting, and retainer arrangements.</p>
+  <div class="contact-links">
+    <a href="mailto:mukesharchives@gmail.com" class="contact-link">Email</a>
+    <a href="https://www.linkedin.com/in/maviesque/" target="_blank" class="contact-link">LinkedIn</a>
+    <a href="https://www.instagram.com/thusspokemukesh" target="_blank" class="contact-link">Instagram</a>
+    <a href="https://thusspokemukesh.my.canva.site/" target="_blank" class="contact-link">Canva Site</a>
+    <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7215102" target="_blank" class="contact-link">SSRN</a>
+  </div>
+</div>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+reveals.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
